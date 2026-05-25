@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root {
+  /* 살짝 밝게 — 순흑이 아닌 따뜻한 다크 그레이 */
+  --background: #18181b;   /* zinc-900 */
+  --foreground: #f4f4f5;   /* zinc-100 */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* 기본 폰트 크기 키움 */
+  font-size: 15px;
+  line-height: 1.55;
+}

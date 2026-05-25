@@ -35,24 +35,6 @@ export type Asset = {
   created_at: string;
 };
 
-export type Hobby = {
-  id: string;
-  name: string;
-  description: string | null;
-  started_at: string | null;
-  level: string | null;
-  created_at: string;
-};
-
-export type Skill = {
-  id: string;
-  name: string;
-  description: string | null;
-  level: number;
-  category: string | null;
-  created_at: string;
-};
-
 export type Diary = {
   id: string;
   date: string;
@@ -124,6 +106,94 @@ export type Achievement = {
   description: string | null;
   icon: string | null;
   earned_at: string;
+};
+
+// ============================================================================
+// Investment (투자)
+// ============================================================================
+export type InvHolding = {
+  id: string;
+  code: string;
+  name: string;
+  market: string | null;
+  buy_date: string | null;
+  buy_price: number;
+  quantity: number;
+  current_price: number;
+  status: string | null;
+  memo: string | null;
+  created_at: string;
+};
+
+export type InvWatchlist = {
+  id: string;
+  code: string;
+  name: string;
+  current_price: number;
+  target_buy: number;
+  target_sell: number;
+  reason: string | null;
+  checkpoint: string | null;
+  grade: string | null;
+  reg_date: string | null;
+  memo: string | null;
+  created_at: string;
+};
+
+export type InvTrade = {
+  id: string;
+  date: string;
+  name: string;
+  type: string | null;
+  price: number;
+  quantity: number;
+  amount: number;
+  reason: string | null;
+  feedback: string | null;
+  learning: string | null;
+  created_at: string;
+};
+
+export type InvMemo = {
+  id: string;
+  date: string;
+  title: string;
+  content: string | null;
+  related: string | null;
+  type: string | null;
+  priority: string | null;
+  created_at: string;
+};
+
+export type InvGoal = {
+  id: string;
+  name: string;
+  target: number;
+  current: number;
+  deadline: string | null;
+  status: string | null;
+  created_at: string;
+};
+
+export type InvAnalysis = {
+  id: string;
+  code: string;
+  growth: number;
+  profit: number;
+  stability: number;
+  valuation: number;
+  dividend: number;
+  per: number;
+  pbr: number;
+  roe: number;
+  debt: number;
+  revenue_growth: number;
+  op_growth: number;
+  dividend_yield: number;
+  issue: string | null;
+  risk: string | null;
+  judgment: string | null;
+  updated_at: string;
 };
 
 export type Trip = {

@@ -3,15 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Home, TrendingUp, Wallet, Palette, Award, BookOpen, Briefcase, Plane, Dumbbell, Settings, Menu, X } from "lucide-react";
+import { Home, TrendingUp, Wallet, BookOpen, Briefcase, Plane, Dumbbell, Settings, Menu, X } from "lucide-react";
 
 const menu = [
   { href: "/",          label: "홈",       icon: Home },
   { href: "/invest",    label: "투자",     icon: TrendingUp },
   { href: "/assets",    label: "자산",     icon: Wallet },
   { href: "/training",  label: "운동",     icon: Dumbbell },
-  { href: "/hobbies",   label: "취미",     icon: Palette },
-  { href: "/skills",    label: "특기",     icon: Award },
   { href: "/diary",     label: "일기",     icon: BookOpen },
   { href: "/work",      label: "업무",     icon: Briefcase },
   { href: "/travel",    label: "여행",     icon: Plane },

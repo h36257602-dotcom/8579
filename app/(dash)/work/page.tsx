@@ -143,7 +143,7 @@ export default function WorkPage() {
 
       {!isAdmin && (
         <div className="text-xs text-zinc-500 text-center">
-          추가하려면 <Link href="/admin" className="text-zinc-300 underline">관리자 로그인</Link>
+          추가하려면 <Link href="/login" className="text-zinc-300 underline">로그인</Link>
         </div>
       )}
     </div>

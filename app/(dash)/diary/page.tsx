@@ -97,7 +97,7 @@ export default function DiaryPage() {
 
       {!isAdmin && (
         <div className="text-xs text-zinc-500 text-center">
-          쓰려면 <Link href="/admin" className="text-zinc-300 underline">관리자 로그인</Link>
+          쓰려면 <Link href="/login" className="text-zinc-300 underline">로그인</Link>
         </div>
       )}
     </div>

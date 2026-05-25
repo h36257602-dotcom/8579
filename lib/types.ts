@@ -207,3 +207,37 @@ export type Trip = {
   note: string | null;
   created_at: string;
 };
+
+export type TripDay = {
+  id: string;
+  trip_id: string;
+  date: string;
+  one_liner: string | null;
+  mood: string | null;
+  note: string | null;
+  created_at: string;
+};
+
+export type TripPlace = {
+  id: string;
+  trip_id: string;
+  date: string;
+  time: string | null;
+  name: string;
+  category: string | null;
+  rating: number | null;
+  note: string | null;
+  sort_order: number;
+  created_at: string;
+};
+
+export type TripExpense = {
+  id: string;
+  trip_id: string;
+  date: string | null;
+  category: string | null;
+  item: string;
+  amount: number;
+  note: string | null;
+  created_at: string;
+};

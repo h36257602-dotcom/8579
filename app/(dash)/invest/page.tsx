@@ -189,7 +189,7 @@ export default function WealthInsight() {
               </span>
             </div>
           </div>
-          {!isAdmin && <Badge tone="zinc">읽기 전용 · 관리자 로그인 시 편집</Badge>}
+          {!isAdmin && <Badge tone="zinc">읽기 전용 · 로그인 시 편집</Badge>}
         </div>
 
         {/* 가로 탭 */}
@@ -754,7 +754,7 @@ function AnalysisPage({ holdings, analysis, isAdmin, refresh }) {
                 onChange={(e) => {}} placeholder="매수/보유/매도 판단" />
             </Card>
           </div>
-          {!isAdmin && <div className="text-xs text-zinc-500 text-center">수정하려면 관리자 로그인</div>}
+          {!isAdmin && <div className="text-xs text-zinc-500 text-center">수정하려면 로그인</div>}
         </>
       )}
     </div>

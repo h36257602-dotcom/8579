@@ -102,7 +102,7 @@ export default function BodyMetricsPage() {
 
       {items.length === 0 ? (
         <div className="text-xs text-zinc-500 py-12 text-center border border-dashed border-zinc-800 rounded-2xl tracking-wider">
-          측정 기록이 없습니다 {!isAdmin && <>· <Link href="/admin" className="text-cyan-400 underline">관리자 로그인</Link></>}
+          측정 기록이 없습니다 {!isAdmin && <>· <Link href="/login" className="text-cyan-400 underline">로그인</Link></>}
         </div>
       ) : (
         <div className="rounded-2xl border border-zinc-700 overflow-x-auto">

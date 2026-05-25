@@ -290,7 +290,7 @@ export default function WorkoutLogPage() {
       {/* 리스트 */}
       {filtered.length === 0 ? (
         <div className="text-base text-zinc-400 py-14 text-center border border-dashed border-zinc-700 rounded-2xl">
-          기록이 없습니다 {!isAdmin && <>· <Link href="/admin" className="text-cyan-300 underline">관리자 로그인</Link></>}
+          기록이 없습니다 {!isAdmin && <>· <Link href="/login" className="text-cyan-300 underline">로그인</Link></>}
         </div>
       ) : (
         <div className="space-y-2.5">

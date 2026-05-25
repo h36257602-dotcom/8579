@@ -160,7 +160,7 @@ function SectionHeader({ title, count, link }: { title: string; count?: string; 
 function EmptyState({ message }: { message: string }) {
   return (
     <div className="text-xs text-zinc-500 py-8 text-center border border-dashed border-zinc-800 rounded-2xl">
-      {message} <Link href="/admin" className="text-zinc-300 underline">관리자</Link>에서 추가하세요.
+      {message} <Link href="/login" className="text-zinc-300 underline">로그인</Link>해서 추가하세요.
     </div>
   );
 }

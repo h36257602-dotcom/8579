@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Home, TrendingUp, Wallet, BookOpen, Briefcase, Plane, Dumbbell, LogIn, LogOut, Menu, X } from "lucide-react";
+import { Home, TrendingUp, Wallet, BookOpen, Briefcase, Plane, Dumbbell, LogIn, LogOut, Menu, X, Shield } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { useUser } from "@/lib/useUser";
 
@@ -65,7 +65,8 @@ export default function Sidebar() {
 
 function SidebarContent({ pathname, onCloseClick }: { pathname: string; onCloseClick?: () => void }) {
   const router = useRouter();
-  const { user, loading } = useUser();
+  const { user, profile, loading } = useUser();
+  const isAdmin = profile?.role === "admin";
 
   const logout = async () => {
     await supabase.auth.signOut();
@@ -104,6 +105,15 @@ function SidebarContent({ pathname, onCloseClick }: { pathname: string; onCloseC
             </Link>
           );
         })}
+        {isAdmin && (
+          <Link href="/admin"
+            className={`flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-base transition border-t border-zinc-800 mt-2 pt-3 ${
+              pathname.startsWith("/admin") ? "text-amber-200 font-semibold" : "text-amber-300/80 hover:text-amber-200 hover:bg-zinc-800"
+            }`}>
+            <Shield size={17} />
+            관리자 패널
+          </Link>
+        )}
       </nav>
 
       <div className="p-3 border-t border-zinc-800">

@@ -10,6 +10,7 @@ export default function SignupPage() {
   const router = useRouter();
   const { user, loading: userLoading } = useUser();
 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
@@ -22,19 +23,23 @@ export default function SignupPage() {
 
   const submit = async () => {
     setErr("");
+    if (!name.trim()) { setErr("이름을 입력하세요."); return; }
     if (!email || !password) { setErr("이메일과 비밀번호를 입력하세요."); return; }
     if (password.length < 6) { setErr("비밀번호는 6자 이상이어야 합니다."); return; }
     if (password !== password2) { setErr("비밀번호가 일치하지 않습니다."); return; }
 
     setBusy(true);
-    const { error } = await supabase.auth.signUp({ email, password });
+    const { error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: { data: { name: name.trim() } },
+    });
     setBusy(false);
 
     if (error) {
       setErr(error.message);
       return;
     }
-    // Confirm email OFF 상태라 즉시 로그인된 상태
     router.push("/");
   };
 
@@ -52,9 +57,15 @@ export default function SignupPage() {
 
           <div className="space-y-3">
             <div>
+              <label className="text-sm text-zinc-300">이름</label>
+              <input type="text" value={name} onChange={(e) => setName(e.target.value)}
+                placeholder="홍길동" autoFocus
+                className="w-full mt-1 bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-violet-500/60" />
+            </div>
+            <div>
               <label className="text-sm text-zinc-300">이메일</label>
               <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@example.com" autoFocus
+                placeholder="you@example.com"
                 className="w-full mt-1 bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-violet-500/60" />
             </div>
             <div>
